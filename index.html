@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <title>ios預設樣式覆蓋測試</title>
     <style>
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
         }
+
         body {
             padding: 20px;
             background: #d3d3d3;
@@ -16,28 +21,50 @@
         h4 {
             margin: 0;
         }
+
         .container {
             max-width: 1280px;
             margin: 0 auto;
         }
-        .gender, .contact {
+
+        .gender,
+        .contact {
             display: flex;
             align-items: center;
             margin-bottom: 16px;
         }
 
         /* 覆蓋ios預設樣式 */
-        select, option {
+        select,
+        option {
             -webkit-appearance: none;
-            /* border: 1px solid red; */
-            /* background: #fff; */
-            color: red;
+            border: 1px solid #000;
+            background: #fff;
+            color: #000;
             border-radius: 4px;
             padding: 4px;
             font-size: 14px;
         }
+
+        .select-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .select-wrapper:after {
+            content: '\0025BC';
+            color: #000;
+            height: 12px;
+            right: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+            pointer-events: none;
+            font-size: 14px;
+        }
     </style>
 </head>
+
 <body>
 
     <div class="container">
@@ -45,22 +72,25 @@
             <div class="gender">
                 <h4>性別：</h4>
                 <div>
-                    <input type="radio" id="male" name="gender"> 
+                    <input type="radio" id="male" name="gender">
                     <label for="male">男</label>
                 </div>
                 <div>
-                    <input type="radio" id="female" name="gender"> 
+                    <input type="radio" id="female" name="gender">
                     <label for="female">女</label>
                 </div>
             </div>
             <div class="contact">
                 <h4>聯絡方式：</h4>
-                <select>
-                    <option value="phone">電話</option>
-                    <option value="email">電子郵件</option>
-                </select>
+                <div class="select-wrapper">
+                    <select>
+                        <option value="phone">電話</option>
+                        <option value="email">電子郵件</option>
+                    </select>
+                </div>
             </div>
         </form>
     </div>
 </body>
+
 </html>
