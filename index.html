@@ -37,7 +37,9 @@
         /* 覆蓋ios預設樣式 */
         select,
         option {
+            appearance: none;
             -webkit-appearance: none;
+            -moz-appearance: none;
             border: 1px solid #000;
             background: #fff;
             color: #000;
@@ -61,6 +63,23 @@
             position: absolute;
             pointer-events: none;
             font-size: 12px;
+        }
+
+        button {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            border: none;
+            background-color: #2191df;
+            color: #fff;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all .5s;
+        }
+
+        button:hover {
+            background-color: #1470b3;
         }
     </style>
 </head>
