@@ -27,6 +27,7 @@
             margin: 0 auto;
         }
 
+        .name,
         .gender,
         .contact {
             display: flex;
@@ -36,10 +37,15 @@
 
         /* 覆蓋ios預設樣式 */
         select,
-        option {
+        option,
+        button {
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
+        }
+
+        select,
+        option {
             border: 1px solid #000;
             background: #fff;
             color: #000;
@@ -64,11 +70,12 @@
             pointer-events: none;
             font-size: 12px;
         }
-
+        input {
+            border: none;
+            border-bottom: 1px solid #000;
+            background: transparent;
+        }
         button {
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
             border: none;
             background-color: #2191df;
             color: #fff;
@@ -88,6 +95,10 @@
 
     <div class="container">
         <form>
+            <div class="name">
+                <h4><label for="name">姓名：</label></h4>
+                <input type="text" id="name">
+            </div>
             <div class="gender">
                 <h4>性別：</h4>
                 <div>
